@@ -1,0 +1,1808 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="./style.css " rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" />
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </head>
+  <body>
+    <!-- navigation bar -->
+    <nav
+      class="fixed top-3 w-[90%] left-0 right-0 mx-auto bg-linear-to-r from-[#4E0000] to-[#7D0000] text-white rounded md:rounded-full backdrop-blur-sm shadow-lg z-50"
+    >
+      <div class="container mx-auto py-3 px-4 pr-8">
+        <div class="flex justify-between items-center">
+          <div class="text-lg lg:text-2xl flex gap-3.5 items-center">
+            <img src="./asset/logo.png" alt="red-warrior" class="w-12" />
+            <p class="font-sakana mt-1.5">Red Warrior</p>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="#home" class="nav-link transition-colors">Home</a>
+            <a href="#team" class="nav-link transition-colors">Team</a>
+            <a
+              href="#activity"
+              class="nav-link transition-all duration-200 active:ring-2 active:ring-offset-2 ring-primary active:scale-90 active:shadow-custom"
+              >Activity</a
+            >
+            <a href="#gallery" class="nav-link transition-colors">Gallery</a>
+          </div>
+          <button
+            class="md:hidden active:scale-90 duration-100"
+            id="mobile-menu-btn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              width="30"
+              height="30"
+              viewBox="0 0 50 50"
+              fill="#fff"
+            >
+              <path
+                d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+          <div class="py-4 space-y-4">
+            <a href="#home" class="block text-white">Home</a>
+            <a href="#team" class="block text-white">Team</a>
+            <a href="#activity" class="block text-white">Activity</a>
+            <a href="#gallery" class="block text-white">Gallery</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- hero section -->
+    <header class="bg-secondary-100 h-screen overflow-hidden relative z-2">
+      <!-- background floating text -->
+      <div>
+        <p class="text-stroke font-sakana top-16">From passion</p>
+        <p class="text-stroke font-sakana bottom-0">TO GREATNESS</p>
+      </div>
+
+      <!-- main content -->
+      <div
+        class="container mx-auto h-full flex items-center justify-center md:justify-start"
+      >
+        <div class="space-y-4 flex flex-col justify-center">
+          <!-- heading -->
+          <h1
+            class="uppercase font-sakana text-[32px] sm:text-6xl xl:text-7xl leading-[1] text-gradient-text text-center sm:text-left"
+          >
+            From Passion
+          </h1>
+          <h1
+            class="uppercase font-sakana text-[32px] sm:text-6xl xl:text-7xl leading-[1] text-gradient-text text-center sm:text-left"
+          >
+            to GREATNESS
+          </h1>
+          <!-- description -->
+          <p
+            class="text-center sm:text-left px-5 text-xs sm:text-[14px] xl:text-base font-sakana tracking-wider text-[#6E4141] max-w-[786px]"
+          >
+            We’re not just a team — we’re a whole mood. Creative minds,
+            game-time energy, foodies with flavor, and planners with purpose.
+            <span class="hidden sm:inline"
+              >From setting the vibe to serving the snacks, we brin 🔥 to every
+              event. We show up. We show out. And we make it
+              unforgettable.</span
+            >
+          </p>
+          <!-- btn -->
+          <div class="w-fit m-auto sm:m-0">
+            <button
+              class="bg-[#3E0505] skew-x-[-30deg] text-white font-sakana py-2 px-3 lg:py-3 lg:px6 ml-4 cursor-pointer hover:scale-95 active:scale-90 duration-100 tracking-[3px] text-xs"
+            >
+              DISCOVER MORE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ball image -->
+      <img
+        src="./asset/ball.png"
+        class="absolute bottom-[-120px] right-0 w-[300px] lg:w-[450px]"
+      />
+    </header>
+
+    <!-- live score section -->
+    <section class="bg-secondary-100">
+      <div class="container mx-auto px-4 pb-20">
+        <!-- score board cricket-->
+        <div
+          class="bg-linear-to-t from-[#4E0000] via-[#7D0000] to-[#4E0000] text-white px-10 sm:px-20 py-12 rounded-[60px] overflow-hidden relative z-10 -mt-10 hidden"
+        >
+          <!-- heading -->
+          <div class="flex justify-center items-center">
+            <h6 class="text-center font-sakana text-4xl">Live Score</h6>
+            <dotlottie-player
+              src="https://lottie.host/75aaff42-f7a5-40d9-83ab-8000dd1a204d/YjHJf0HnoN.lottie"
+              background="transparent"
+              speed="1"
+              style="width: 75px; height: 75px"
+              loop
+              autoplay
+            ></dotlottie-player>
+          </div>
+
+          <!-- live score display -->
+          <div class="grid grid-cols-1 gap-y-10 gap-x-20 xl:grid-cols-3 mt-10">
+            <!-- batting -->
+            <div class="bg-white/10 px-5 py-5 space-y-5 rounded-[60px]">
+              <!-- on striker -->
+              <div
+                class="bg-white/15 flex justify-around items-center flex-wrap gap-8 px-1.5 py-2.5 rounded-4xl"
+              >
+                <div class="flex items-center justify-center flex-wrap gap-3">
+                  <img src="asset/pleayers/akter.png" alt="akter" />
+                  <p class="text-center">White Wolves</p>
+                </div>
+                <div class="p-3">
+                  <span>0</span>
+                  <span class="text-white/60">(1)</span>
+                </div>
+              </div>
+              <!-- off striker -->
+              <div
+                class="bg-white/15 flex justify-around items-center flex-wrap gap-8 px-1.5 py-2.5 rounded-4xl"
+              >
+                <div class="flex items-center justify-center flex-wrap gap-3">
+                  <img src="asset/pleayers/muquit.png" alt="White Wolves " />
+                  <p class="text-center">White Wolves</p>
+                </div>
+                <div class="p-3">
+                  <span>0</span>
+                  <span class="text-white/60">(1)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- score -->
+            <div class="bg-white/10 px-10 py-6 space-y-5 rounded-[60px]">
+              <div class="flex items-center justify-center flex-wrap gap-3">
+                <img
+                  src="asset/all-team-logo/red.svg"
+                  alt="akter"
+                  width="25px"
+                />
+                <p class="text-center text-white/60">Red Warrior - Batting</p>
+              </div>
+              <!-- run by wicket -->
+              <div class="text-center">
+                <div
+                  class="flex justify-center items-center flex-wrap gap-3 text-2xl sm:text-4xl"
+                >
+                  <span class="text-nowrap">103 - 2</span>
+                  <span class="text-white/60">(4.5)</span>
+                </div>
+              </div>
+              <!-- info -->
+              <div>
+                <p class="text-center text-white/60">Red W choose to bat</p>
+              </div>
+            </div>
+
+            <!-- Bowling -->
+            <div class="bg-white/10 px-5 py-5 space-y-5 rounded-[60px]">
+              <!-- bowling team -->
+              <div class="flex items-center justify-center flex-wrap gap-3">
+                <img
+                  src="asset/all-team-logo/white.svg"
+                  alt="akter"
+                  width="25px"
+                />
+                <p class="text-center text-white/60">White W - bowling</p>
+              </div>
+              <!-- bowler name -->
+              <p class="text-center text-2xl sm:text-4xl">Arif Hossain</p>
+              <!-- bowler statistics -->
+              <div class="flex justify-center flex-wrap text-white/60 gap-2.5">
+                <span
+                  class="p-2 px-3 text-xs bg-green-500/25 border border-white/30 rounded-2xl"
+                  >Overs: 4</span
+                >
+                <span
+                  class="p-2 px-3 text-xs bg-yellow-500/25 border border-white/30 rounded-2xl"
+                  >Runs: 30</span
+                >
+                <span
+                  class="p-2 px-3 text-xs bg-red-500/25 border border-white/30 rounded-2xl"
+                  >Wickets: 2</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- ball by ball  -->
+          <div class="mt-10">
+            <div class="swiper mySwiper relative">
+              <div class="swiper-wrapper">
+                <!-- slide one -->
+                <div class="swiper-slide">
+                  <div class="flex flex-wrap gap-5 justify-center items-center">
+                    <!-- 1st over -->
+                    <div
+                      class="bg-white/15 flex flex-wrap items-center px-4 py-2 rounded-4xl mb-4 gap-2"
+                    >
+                      <span class="mr-2.5">1st</span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/4.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/1.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/wd.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/6.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/4.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/W.png" alt="."
+                      /></span>
+                    </div>
+
+                    <!-- 2nd over -->
+                    <div
+                      class="bg-white/15 flex flex-wrap items-center px-4 py-2 rounded-4xl mb-4 gap-2"
+                    >
+                      <span class="mr-2.5">2nd</span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/4.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/1.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/2.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+                    </div>
+
+                    <!-- 3rd over -->
+                    <div
+                      class="bg-white/15 flex flex-wrap items-center px-4 py-2 rounded-4xl mb-4 gap-2"
+                    >
+                      <span class="mr-2.5">3rd</span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/4.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/1.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/wd.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/6.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/4.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/W.png" alt="."
+                      /></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- slide two -->
+                <div class="swiper-slide">
+                  <div class="flex flex-wrap gap-5 justify-center items-center">
+                    <!-- 1st over -->
+                    <div
+                      class="bg-white/15 flex flex-wrap items-center px-4 py-2 rounded-4xl mb-4 gap-2"
+                    >
+                      <span class="mr-2.5">1st</span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/4.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/1.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/wd.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/6.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/4.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/W.png" alt="."
+                      /></span>
+                    </div>
+
+                    <!-- 2nd over -->
+                    <div
+                      class="bg-white/15 flex flex-wrap items-center px-4 py-2 rounded-4xl mb-4 gap-2"
+                    >
+                      <span class="mr-2.5">2nd</span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/4.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/1.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/2.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+
+                      <span class="w-8 h-8 rounded-full overflow-hidden"
+                        ><img src="asset/ball-status/dot.png" alt="."
+                      /></span>
+                    </div>
+
+                    <!-- 3rd over -->
+                    <div
+                      class="bg-white/15 flex flex-wrap items-center px-4 py-2 rounded-4xl mb-4 gap-2"
+                    >
+                      <span class="mr-2.5">3rd</span>
+
+                      <div
+                        class="flex items-center justify-center flex-wrap gap-3"
+                      >
+                        <span class="w-8 h-8 rounded-full overflow-hidden"
+                          ><img src="asset/ball-status/dot.png" alt="."
+                        /></span>
+
+                        <span class="w-8 h-8 rounded-full overflow-hidden"
+                          ><img src="asset/ball-status/4.png" alt="."
+                        /></span>
+
+                        <span class="w-8 h-8 rounded-full overflow-hidden"
+                          ><img src="asset/ball-status/1.png" alt="."
+                        /></span>
+
+                        <span class="w-8 h-8 rounded-full overflow-hidden"
+                          ><img src="asset/ball-status/wd.png" alt="."
+                        /></span>
+
+                        <span class="w-8 h-8 rounded-full overflow-hidden"
+                          ><img src="asset/ball-status/6.png" alt="."
+                        /></span>
+
+                        <span class="w-8 h-8 rounded-full overflow-hidden"
+                          ><img src="asset/ball-status/4.png" alt="."
+                        /></span>
+
+                        <span class="w-8 h-8 rounded-full overflow-hidden"
+                          ><img src="asset/ball-status/W.png" alt="."
+                        /></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- slide navigation btn prev-->
+              <div class="button-next text-red-500 absolute top-0 right-0 z-10">
+                <span
+                  class="w-10 h-10 rounded-full flex justify-center items-center bg-white"
+                >
+                  <i class="fa-solid fa-arrow-right"></i>
+                </span>
+              </div>
+              <!-- slide navigation btn next-->
+              <div class="button-prev text-red-500 absolute top-0 left-0 z-10">
+                <span
+                  class="w-10 h-10 rounded-full flex justify-center items-center bg-white"
+                >
+                  <i class="fa-solid fa-arrow-left"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- score board football -->
+        <div
+          class="bg-linear-to-t from-[#4E0000] via-[#7D0000] to-[#4E0000] text-white px-10 sm:px-20 py-12 rounded-[60px] overflow-hidden relative z-10 -mt-10"
+        >
+          <!-- heading -->
+          <div class="flex justify-center items-center">
+            <h6 class="text-center font-sakana text-4xl">Live Score</h6>
+            <dotlottie-player
+              src="https://lottie.host/75aaff42-f7a5-40d9-83ab-8000dd1a204d/YjHJf0HnoN.lottie"
+              background="transparent"
+              speed="1"
+              style="width: 75px; height: 75px"
+              loop
+              autoplay
+            ></dotlottie-player>
+          </div>
+
+          <!-- time -->
+          <div class="text-center text-white/60">
+            <span class="p-1.5 px-5 bg-white/10 rounded-4xl">06:46</span>
+          </div>
+
+          <!-- live score display -->
+          <div class="grid grid-cols-1 gap-y-10 gap-x-20 xl:grid-cols-3 mt-10">
+            <!-- team 1 -->
+            <div class="bg-white/10 px-5 py-5 pb-8 space-y-5 rounded-[60px]">
+              <!-- team logo -->
+              <div>
+                <img
+                  src="asset/all-team-logo/red.svg"
+                  alt="Red Warrior"
+                  class="w-[100px] mx-auto"
+                />
+              </div>
+              <!-- score and event -->
+              <div class="space-y-2">
+                <!-- goal scorers -->
+                <div
+                  class="bg-white/15 flex max-[350px]:justify-center justify-between items-center flex-wrap max-[350px]:gap-2 gap-8 px-6 max-[350px]:py-2.5 py-1.5 rounded-4xl"
+                >
+                  <span>Emamul</span>
+                  <div>
+                    <span class="mr-2">
+                      <i class="fa-solid fa-futbol"></i>
+                    </span>
+                    <span>4'</span>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-white/15 flex max-[350px]:justify-center justify-between items-center flex-wrap max-[350px]:gap-2 gap-8 px-6 max-[350px]:py-2.5 py-1.5 rounded-4xl"
+                >
+                  <span>Nowfel</span>
+                  <div>
+                    <span class="mr-2">
+                      <i class="fa-solid fa-futbol"></i>
+                    </span>
+                    <span>4'</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- score -->
+            <div
+              class="bg-white/10 px-10 py-6 space-y-5 rounded-[60px] flex justify-center"
+            >
+              <div class="flex items-center justify-center flex-wrap gap-3">
+                <span class="text-4xl lg:text-7xl">2</span>
+                <span class="text-4xl lg:text-7xl">-</span>
+                <span class="text-4xl lg:text-7xl">0</span>
+              </div>
+            </div>
+
+            <!-- team 2 -->
+            <div class="bg-white/10 px-5 py-5 pb-8 space-y-5 rounded-[60px]">
+              <!-- team logo -->
+              <div>
+                <img
+                  src="asset/all-team-logo/golden.svg"
+                  alt="Golden Tigers"
+                  class="w-[100px] mx-auto"
+                />
+              </div>
+              <!-- goal scorer -->
+              <div class="space-y-2">
+                <div
+                  class="bg-white/15 flex max-[350px]:justify-center justify-between items-center flex-wrap max-[350px]:gap-2 gap-8 px-6 max-[350px]:py-2.5 py-1.5 rounded-4xl"
+                >
+                  <span>Hadi</span>
+                  <div>
+                    <span class="mr-2">
+                      <i class="fa-solid fa-futbol"></i>
+                    </span>
+                    <span>3'</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activity Section -->
+    <section id="activity" class="py-20 bg-secondary-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-10 fade-in">
+          <h2 class="text-4xl font-sakana text-primary mb-4">Our Activities</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Explore what makes Red Warrior special across different domains
+          </p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="flex flex-wrap justify-center mb-8">
+          <button
+            class="tab-btn active bg-primary text-white px-6 py-3 rounded-l-lg font-semibold cursor-pointer"
+            data-tab="sports"
+          >
+            <i class="fas fa-trophy mr-2"></i>Sports
+          </button>
+          <button
+            class="tab-btn bg-white text-gray-700 px-6 py-3 font-semibold cursor-pointer"
+            data-tab="food"
+          >
+            <i class="fas fa-utensils mr-2"></i>Food
+          </button>
+          <button
+            class="tab-btn bg-white text-gray-700 px-6 py-3 font-semibold cursor-pointer"
+            data-tab="creativity"
+          >
+            <i class="fas fa-palette mr-2"></i>Creativity
+          </button>
+          <button
+            class="tab-btn bg-white text-gray-700 px-6 py-3 rounded-r-lg font-semibold cursor-pointer"
+            data-tab="organizing"
+          >
+            <i class="fa-solid fa-clock mr-2"></i>Itinerary
+          </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+          <!-- Sports Tab -->
+          <div id="sports" class="tab-pane active">
+            <!-- Sports Sub-tabs btns-->
+            <div class="flex flex-wrap justify-center mb-8 gap-2">
+              <button
+                class="sports-tab-btn active bg-primary text-white px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-sports-tab="all"
+              >
+                All
+              </button>
+              <button
+                class="sports-tab-btn bg-white text-gray-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-sports-tab="cricket"
+              >
+                Cricket
+              </button>
+              <button
+                class="sports-tab-btn bg-white text-gray-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-sports-tab="football"
+              >
+                Football
+              </button>
+              <button
+                class="sports-tab-btn bg-white text-gray-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-sports-tab="volleyball"
+              >
+                Volleyball
+              </button>
+              <button
+                class="sports-tab-btn bg-white text-gray-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-sports-tab="shortgame"
+              >
+                Short Game
+              </button>
+            </div>
+
+            <!-- Sports Sub-tab Contents -->
+            <div class="sports-tab-content">
+              <!-- All Sports -->
+              <div id="all" class="sports-tab-pane active">
+                <div class="grid md:grid-cols-3 gap-6 justify-self-center">
+                  <!-- football -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 max-w-[400px]"
+                  >
+                    <h3
+                      class="text-xl font-sakana text-primary mb-4 text-center"
+                    >
+                      Football Stats
+                    </h3>
+                    <img src="./asset/icon-football.svg" class="w-[100px]" />
+                    <div class="space-y-3 w-full text-primary">
+                      <div class="flex justify-between">
+                        <span>Wins</span>
+                        <span class="font-bold">6</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div
+                          class="chart-bar bg-linear-to-r from-[#4E0000] to-[#7D0000] h-3 rounded-full"
+                          style="width: 0%"
+                          data-width="60"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- cricket -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 max-w-[400px]"
+                  >
+                    <h3
+                      class="text-xl font-sakana text-primary mb-4 text-center"
+                    >
+                      Cricket Stats
+                    </h3>
+                    <img src="./asset/icon-cricket.svg" class="w-[100px]" />
+                    <div class="space-y-3 w-full text-primary">
+                      <div class="flex justify-between">
+                        <span>Wins</span>
+                        <span class="font-bold">8</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div
+                          class="chart-bar bg-linear-to-r from-[#4E0000] to-[#7D0000] h-3 rounded-full"
+                          style="width: 0%"
+                          data-width="80"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- volleyball -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 max-w-[400px]"
+                  >
+                    <h3
+                      class="text-xl font-sakana text-primary mb-4 text-center"
+                    >
+                      Volleyball Stats
+                    </h3>
+                    <img src="./asset/icon-volleyball.svg" class="w-[100px]" />
+                    <div class="space-y-3 w-full text-primary">
+                      <div class="flex justify-between">
+                        <span>Wins</span>
+                        <span class="font-bold">7</span>
+                      </div>
+                      <div class="w-full bg-gray-200 rounded-full h-3">
+                        <div
+                          class="chart-bar bg-linear-to-r from-[#4E0000] to-[#7D0000] h-3 rounded-full"
+                          style="width: 0%"
+                          data-width="70"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Overall Performance -->
+                <div class="hidden sm:block mt-14 bg-secondary-100v">
+                  <h3 class="text-4xl font-bold text-primary mb-6 text-center">
+                    <i class="fas fa-chart-line mr-2"></i>Overall Performance
+                  </h3>
+                  <div class="grid md:grid-cols-6 gap-6 text-center">
+                    <!-- win-rate chart -->
+                    <div
+                      class="col-span-2 flex justify-center items-center bg-secondary-50 p-8 rounded-xl"
+                    >
+                      <div class="max-w-[400px]">
+                        <canvas id="winRate"></canvas>
+                      </div>
+                    </div>
+                    <!-- line chart -->
+                    <div class="bg-secondary-50 p-8 col-span-4 rounded-xl">
+                      <canvas id="resultChart"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Cricket -->
+              <div id="cricket" class="sports-tab-pane hidden">
+                <div
+                  class="bg-linear-to-t from-[#4E0000] via-[#7D0000] to-[#4E0000] text-white px-20 py-12 rounded-4xl overflow-hidden"
+                >
+                  <h6 class="text-center font-sakana text-4xl">Fixture</h6>
+                  <div class="grid grid-cols-1 gap-y-10 xl:grid-cols-3 mt-10">
+                    <!-- round 1 -->
+                    <div
+                      class="max-w-[350px] justify-self-center bg-white/30 px-5 py-5 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3 xl:px-10"
+                      >
+                        <img
+                          src="asset/all-team-logo/red.svg"
+                          alt="Red Warriors"
+                        />
+                        <p class="font-sakana text-center">Red Warriors</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-white/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-white/20"
+                        >
+                          VS
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3"
+                      >
+                        <img
+                          src="asset/all-team-logo/white.svg"
+                          alt="White Wolves "
+                        />
+                        <p class="font-sakana text-center">White Wolves</p>
+                      </div>
+                    </div>
+                    <!-- final -->
+                    <div
+                      class="justify-self-center self-center w-[300px] h-fit bg-white/10 px-10 py-6 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center gap-3 w-[190px] p-2 rounded-full mx-auto"
+                      >
+                        <img
+                          src="asset/all-team-logo/tbd.svg"
+                          alt="Red Warriors"
+                          width="30px"
+                        />
+                        <p class="font-sakana text-center text-xs">TBD</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-[#FFBF00]/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-[#FFBF00]/20 text-[#FFBF00]"
+                        >
+                          <i class="fas fa-trophy mr-2"></i>
+                          final
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center gap-3 w-[190px] p-2 rounded-full mx-auto"
+                      >
+                        <img
+                          src="asset/all-team-logo/tbd.svg"
+                          alt="Red Warriors"
+                          width="30px"
+                        />
+                        <p class="font-sakana text-center text-xs">TBD</p>
+                      </div>
+                    </div>
+                    <!-- round 2 -->
+                    <div
+                      class="max-w-[350px] justify-self-center bg-white/10 px-5 py-5 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3 xl:px-10"
+                      >
+                        <img
+                          src="asset/all-team-logo/golden.svg"
+                          alt="Golden Tigers"
+                        />
+                        <p class="font-sakana text-center">Golden Tigers</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-white/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-white/20"
+                        >
+                          VS
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3"
+                      >
+                        <img
+                          src="asset/all-team-logo/blue.svg"
+                          alt="The Falcons"
+                        />
+                        <p class="font-sakana text-center">The Falcons</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Football -->
+              <div id="football" class="sports-tab-pane hidden">
+                <div
+                  class="bg-linear-to-t from-[#4E0000] via-[#7D0000] to-[#4E0000] text-white px-20 py-12 rounded-4xl overflow-hidden"
+                >
+                  <h6 class="text-center font-sakana text-4xl">Fixture</h6>
+                  <div class="grid grid-cols-1 gap-y-10 xl:grid-cols-3 mt-10">
+                    <!-- round 1 -->
+                    <div
+                      class="max-w-[350px] justify-self-center bg-white/30 px-5 py-5 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3 xl:px-10"
+                      >
+                        <img
+                          src="asset/all-team-logo/golden.svg"
+                          alt="Golden Tigers"
+                        />
+                        <p class="font-sakana text-center">Golden Tigers</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-white/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-white/20"
+                        >
+                          VS
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3"
+                      >
+                        <img
+                          src="asset/all-team-logo/blue.svg"
+                          alt="The Falcons"
+                        />
+                        <p class="font-sakana text-center">The Falcons</p>
+                      </div>
+                    </div>
+                    <!-- final -->
+                    <div
+                      class="justify-self-center self-center w-[300px] h-fit bg-white/10 px-10 py-6 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center gap-3 w-[190px] p-2 rounded-full mx-auto"
+                      >
+                        <img
+                          src="asset/all-team-logo/tbd.svg"
+                          alt="Red Warriors"
+                          width="30px"
+                        />
+                        <p class="font-sakana text-center text-xs">TBD</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-[#FFBF00]/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-[#FFBF00]/20 text-[#FFBF00]"
+                        >
+                          <i class="fas fa-trophy mr-2"></i>
+                          final
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center gap-3 w-[190px] p-2 rounded-full mx-auto"
+                      >
+                        <img
+                          src="asset/all-team-logo/tbd.svg"
+                          alt="Red Warriors"
+                          width="30px"
+                        />
+                        <p class="font-sakana text-center text-xs">TBD</p>
+                      </div>
+                    </div>
+                    <!-- round 2 -->
+                    <div
+                      class="max-w-[350px] justify-self-center bg-white/10 px-5 py-5 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3 xl:px-10"
+                      >
+                        <img
+                          src="asset/all-team-logo/red.svg"
+                          alt="Red Warriors"
+                        />
+                        <p class="font-sakana text-center">Red Warriors</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-white/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-white/20"
+                        >
+                          VS
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3"
+                      >
+                        <img
+                          src="asset/all-team-logo/white.svg"
+                          alt="White Wolves "
+                        />
+                        <p class="font-sakana text-center">White Wolves</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Volleyball -->
+              <div id="volleyball" class="sports-tab-pane hidden">
+                <div
+                  class="bg-linear-to-t from-[#4E0000] via-[#7D0000] to-[#4E0000] text-white px-20 py-12 rounded-4xl overflow-hidden"
+                >
+                  <h6 class="text-center font-sakana text-4xl">Fixture</h6>
+                  <div class="grid grid-cols-1 gap-y-10 xl:grid-cols-3 mt-10">
+                    <!-- round 1 -->
+                    <div
+                      class="max-w-[350px] justify-self-center bg-white/30 px-5 py-5 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3"
+                      >
+                        <img
+                          src="asset/all-team-logo/white.svg"
+                          alt="White Wolves "
+                        />
+                        <p class="font-sakana text-center">White Wolves</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-white/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-white/20"
+                        >
+                          VS
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3 xl:px-10"
+                      >
+                        <img
+                          src="asset/all-team-logo/red.svg"
+                          alt="Red Warriors"
+                        />
+                        <p class="font-sakana text-center">Red Warriors</p>
+                      </div>
+                    </div>
+                    <!-- final -->
+                    <div
+                      class="justify-self-center self-center w-[300px] h-fit bg-white/10 px-10 py-6 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center gap-3 w-[190px] p-2 rounded-full mx-auto"
+                      >
+                        <img
+                          src="asset/all-team-logo/tbd.svg"
+                          alt="Red Warriors"
+                          width="30px"
+                        />
+                        <p class="font-sakana text-center text-xs">TBD</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-[#FFBF00]/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-[#FFBF00]/20 text-[#FFBF00]"
+                        >
+                          <i class="fas fa-trophy mr-2"></i>
+                          final
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center gap-3 w-[190px] p-2 rounded-full mx-auto"
+                      >
+                        <img
+                          src="asset/all-team-logo/tbd.svg"
+                          alt="Red Warriors"
+                          width="30px"
+                        />
+                        <p class="font-sakana text-center text-xs">TBD</p>
+                      </div>
+                    </div>
+                    <!-- round 2 -->
+                    <div
+                      class="max-w-[350px] justify-self-center bg-white/10 px-5 py-5 space-y-5 rounded-4xl border border-white/20"
+                    >
+                      <!-- team 1 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3 xl:px-10"
+                      >
+                        <img
+                          src="asset/all-team-logo/golden.svg"
+                          alt="Golden Tigers"
+                        />
+                        <p class="font-sakana text-center">Golden Tigers</p>
+                      </div>
+                      <!-- vs -->
+                      <div class="text-center">
+                        <p
+                          class="inline-block font-sakana bg-white/15 text-[14px] px-5 py-3.5 pt-4 rounded-lg leading-0 border border-white/20"
+                        >
+                          VS
+                        </p>
+                      </div>
+                      <!-- team 2 -->
+                      <div
+                        class="bg-white/15 flex justify-center items-center flex-wrap gap-3 py-8 rounded-4xl px-3"
+                      >
+                        <img
+                          src="asset/all-team-logo/blue.svg"
+                          alt="The Falcons"
+                        />
+                        <p class="font-sakana text-center">The Falcons</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Short Game -->
+              <div id="shortgame" class="sports-tab-pane hidden">
+                <div class="flex flex-wrap justify-center gap-8">
+                  <!-- Short game 1 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      Short game 1
+                    </h3>
+                    <div class="rounded-xl overflow-hidden w-full">
+                      <iframe
+                        class="w-full h-[200px]"
+                        src="https://www.youtube.com/embed/0wDpHzpFEjI?si=AJafe-qeJJkZ5Tkt"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">Game name</h6>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing
+                        elit. Error reiciendis quis incidunt veniam aperiam
+                        numquam porro dolorum quidem perspiciatis natus dolorem
+                        adipisci cupiditate, est quas unde laudantium sint magni
+                        vero.
+                      </p>
+                      <ul class="list-disc pl-5 mt-5">
+                        <li>
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Suscipit, deleniti.
+                        </li>
+                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing
+                          elit.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Short game 2 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      Short game 2
+                    </h3>
+                    <div class="rounded-xl overflow-hidden w-full">
+                      <iframe
+                        class="w-full h-[200px]"
+                        src="https://www.youtube.com/embed/DZIASl9q90s?si=UpEQp34B09RCKE3N"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">Game Name</h6>
+                      <p>
+                        CHICKEN DOM BIRYANI WITH EGG,SALAD AND BORHANI Lorem
+                        ipsum dolor sit amet, consectetur adipisicing elit.
+                        Vitae dolorem sapiente iste? Nesciunt placeat numquam
+                        alias recusandae voluptatem, tempora error, dolor,
+                      </p>
+                      <ul class="list-disc pl-5 mt-5">
+                        <li>
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Suscipit, deleniti.
+                        </li>
+                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing
+                          elit.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Short game 3 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      Short game 3
+                    </h3>
+                    <div class="rounded-xl overflow-hidden w-full">
+                      <iframe
+                        class="w-full h-[200px]"
+                        src="https://www.youtube.com/embed/pHpDG_nk73w?si=-K5bPaYpn8mUbxHj"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">Game Name</h6>
+                      <p>
+                        Freshly squeezed orange juice Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Delectus, ex? Lorem ipsum
+                        dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum
+                        dolor sit amet.
+                      </p>
+                      <ul class="list-disc pl-5 mt-5">
+                        <li>
+                          Lorem ipsum dolor sit, amet consectetur adipisicing
+                          elit. Suscipit, deleniti.
+                        </li>
+                        <li>Lorem ipsum dolor sit amet consectetur.</li>
+                        <li>Lorem ipsum dolor sit amet.</li>
+                        <li>
+                          Lorem ipsum dolor sit amet consectetur, adipisicing
+                          elit.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Food Tab -->
+          <div id="food" class="tab-pane hidden">
+            <!-- Food Sub-tabs btns-->
+            <div class="flex flex-wrap justify-center mb-8 gap-2">
+              <button
+                class="food-tab-btn active bg-primary text-white px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-food-tab="breakfast"
+              >
+                Breakfast
+              </button>
+              <button
+                class="food-tab-btn bg-white text-gray-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-food-tab="lunch"
+              >
+                Lunch
+              </button>
+              <button
+                class="food-tab-btn bg-white text-gray-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-food-tab="beverage"
+              >
+                Beverage
+              </button>
+            </div>
+
+            <!-- Food Sub-tab Contents -->
+            <div class="food-tab-content">
+              <!-- Breakfast -->
+              <div id="breakfast" class="food-tab-pane duration-200 active">
+                <div class="flex flex-wrap justify-center gap-8">
+                  <!-- Breakfast Item 1 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      Breakfast
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">BBQ Feast</h6>
+                      <p>Grilled chicken, beef, and vegetables</p>
+                    </div>
+                  </div>
+
+                  <!-- Breakfast Item 2 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      Breakfast
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">BBQ Feast</h6>
+                      <p>Grilled chicken, beef, and vegetables</p>
+                    </div>
+                  </div>
+
+                  <!-- Breakfast Item 3 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      Breakfast
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-1.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">BBQ Feast</h6>
+                      <p>Grilled chicken, beef, and vegetables</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Lunch -->
+              <div id="lunch" class="food-tab-pane duration-200">
+                <div class="flex flex-wrap justify-center gap-8">
+                  <!-- Lunch Item 1 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      lunch
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-2.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">DOM BIRYANI</h6>
+                      <p>CHICKEN DOM BIRYANI WITH EGG,SALAD AND BORHANI</p>
+                    </div>
+                  </div>
+
+                  <!-- Lunch Item 2 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      lunch
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-2.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">DOM BIRYANI</h6>
+                      <p>CHICKEN DOM BIRYANI WITH EGG,SALAD AND BORHANI</p>
+                    </div>
+                  </div>
+
+                  <!-- Lunch Item 3 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      lunch
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-2.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">DOM BIRYANI</h6>
+                      <p>CHICKEN DOM BIRYANI WITH EGG,SALAD AND BORHANI</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Beverage -->
+              <div id="beverage" class="food-tab-pane duration-200">
+                <div class="flex flex-wrap justify-center gap-8">
+                  <!-- Beverage Item 1 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      beverage
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-3.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">fruit juice</h6>
+                      <p>Freshly squeezed orange juice</p>
+                    </div>
+                  </div>
+
+                  <!-- Beverage Item 2 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      beverage
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-3.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">fruit juice</h6>
+                      <p>Freshly squeezed orange juice</p>
+                    </div>
+                  </div>
+
+                  <!-- Beverage Item 3 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 text-white rounded-xl shadow-card p-6 flex flex-col items-center gap-4 w-[400px] hover:bg-amber-50 hover:scale-110 duration-300 group"
+                  >
+                    <h3 class="text-2xl font-sakana text-primary text-center">
+                      beverage
+                    </h3>
+                    <div class="rounded-xl overflow-hidden">
+                      <img
+                        class="group-hover:scale-125 duration-300"
+                        src="asset/food-3.png"
+                        alt=""
+                      />
+                    </div>
+                    <div class="space-y-3 w-full text-primary">
+                      <h6 class="font-sakana">fruit juice</h6>
+                      <p>Freshly squeezed orange juice</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Creativity Tab -->
+          <div id="creativity" class="tab-pane hidden">
+            <div class="grid md:grid-cols-3 gap-6">
+              <div
+                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src="/placeholder.svg?height=200&width=300"
+                  alt="Design work"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <h4 class="font-semibold text-gray-800">Team Logo Design</h4>
+                  <p class="text-sm text-gray-600 mt-1">By Emma Wilson</p>
+                  <span
+                    class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mt-2"
+                    >Graphic Design</span
+                  >
+                </div>
+              </div>
+              <div
+                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src="/placeholder.svg?height=200&width=300"
+                  alt="Writing work"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <h4 class="font-semibold text-gray-800">Team Anthem</h4>
+                  <p class="text-sm text-gray-600 mt-1">By Mike Rodriguez</p>
+                  <span
+                    class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mt-2"
+                    >Writing</span
+                  >
+                </div>
+              </div>
+              <div
+                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src="/placeholder.svg?height=200&width=300"
+                  alt="Video work"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <h4 class="font-semibold text-gray-800">Victory Montage</h4>
+                  <p class="text-sm text-gray-600 mt-1">By David Kim</p>
+                  <span
+                    class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full mt-2"
+                    >Video</span
+                  >
+                </div>
+              </div>
+              <div
+                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src="/placeholder.svg?height=200&width=300"
+                  alt="DIY work"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <h4 class="font-semibold text-gray-800">Custom Jerseys</h4>
+                  <p class="text-sm text-gray-600 mt-1">By Lisa Park</p>
+                  <span
+                    class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full mt-2"
+                    >DIY</span
+                  >
+                </div>
+              </div>
+              <div
+                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src="/placeholder.svg?height=200&width=300"
+                  alt="Design work"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <h4 class="font-semibold text-gray-800">Event Posters</h4>
+                  <p class="text-sm text-gray-600 mt-1">By Emma Wilson</p>
+                  <span
+                    class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mt-2"
+                    >Graphic Design</span
+                  >
+                </div>
+              </div>
+              <div
+                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              >
+                <img
+                  src="/placeholder.svg?height=200&width=300"
+                  alt="Writing work"
+                  class="w-full h-48 object-cover"
+                />
+                <div class="p-4">
+                  <h4 class="font-semibold text-gray-800">Match Reports</h4>
+                  <p class="text-sm text-gray-600 mt-1">By Tom Anderson</p>
+                  <span
+                    class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mt-2"
+                    >Writing</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Organizing Tab -->
+          <div id="organizing" class="tab-pane hidden">
+            <div
+              class="bg-secondary-50 border-2 border-secondary-200 text-primary rounded-xl shadow-card p-10"
+            >
+              <h3 class="text-2xl font-bold mb-10 font-sakana text-center">
+                <i class="fas fa-timeline mr-2 text-red-warrior-600"></i>Event
+                Timeline
+              </h3>
+              <div class="grid md:grid-cols-2 gap-8">
+                <!-- Event Timeline 1st half -->
+                <div
+                  class="space-y-4 md:border-dashed md:border-r md:border-r-secondary-100 md:pr-9"
+                >
+                  <!-- arrival -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 bg-secondary-300/10 hover:bg-secondary-50 duration-200"
+                  >
+                    <span><i class="fa-solid fa-car"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Arrival</h4>
+                      <p class="text-sm text-gray-600">7:45 AM – 8:15 AM</p>
+                    </div>
+                  </div>
+                  <!-- Breakfast -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 bg-secondary-300/10 hover:bg-secondary-50 duration-200"
+                  >
+                    <span><i class="fa-solid fa-mug-saucer"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Breakfast</h4>
+                      <p class="text-sm text-gray-600">7:50 AM – 8:30 AM</p>
+                    </div>
+                  </div>
+
+                  <!-- Warm Up -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 bg-secondary-300/10 hover:bg-secondary-50 duration-200"
+                  >
+                    <span
+                      ><i class="fa-solid fa-person-walking text-2xl"></i
+                    ></span>
+                    <div>
+                      <h4 class="font-semibold">Warm Up</h4>
+                      <p class="text-sm text-gray-600">8:30 AM – 8:40 AM</p>
+                    </div>
+                  </div>
+
+                  <!-- Cricket -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 bg-secondary-300/10 hover:bg-secondary-50 duration-200"
+                  >
+                    <span><i class="fa-solid fa-baseball-bat-ball"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Cricket Match</h4>
+                      <p class="text-sm text-gray-600">8:40 AM – 11:15 AM</p>
+                    </div>
+                  </div>
+
+                  <!-- Football -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 bg-secondary-300/10 hover:bg-secondary-50 duration-200"
+                  >
+                    <span><i class="fa-solid fa-football-ball"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Football Match</h4>
+                      <p class="text-sm text-gray-600">11:30 PM – 12:40 PM</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Event Timeline 2nd half-->
+                <div class="space-y-4">
+                  <!-- prayers lunch -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 hover:bg-secondary-300/10 duration-200"
+                  >
+                    <span><i class="fa-solid fa-utensils"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Prayers & Lunch</h4>
+                      <p class="text-sm text-gray-600">12:30 PM – 2:15 PM</p>
+                    </div>
+                  </div>
+                  <!-- short games -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 hover:bg-secondary-300/10 duration-200"
+                  >
+                    <span><i class="fa-solid fa-dice"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Short Games</h4>
+                      <p class="text-sm text-gray-600">2:30 PM – 3:00 PM</p>
+                    </div>
+                  </div>
+
+                  <!-- VOLLEYBALL -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 hover:bg-secondary-300/10 duration-200"
+                  >
+                    <span><i class="fa-solid fa-volleyball"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Volleyball</h4>
+                      <p class="text-sm text-gray-600">3:15 PM – 4:45 PM</p>
+                    </div>
+                  </div>
+
+                  <!-- birthday celebration -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 hover:bg-secondary-300/10 duration-200"
+                  >
+                    <span><i class="fa-solid fa-cake-candles"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Birthday Celebration</h4>
+                      <p class="text-sm text-gray-600">4:45 PM – 5:00 PM</p>
+                    </div>
+                  </div>
+
+                  <!-- departure -->
+                  <div
+                    class="flex items-center p-4 rounded-lg gap-5 border border-secondary-100/40 hover:bg-secondary-300/10 duration-200"
+                  >
+                    <span><i class="fa-solid fa-car-side"></i></span>
+                    <div>
+                      <h4 class="font-semibold">Departure</h4>
+                      <p class="text-sm text-gray-600">5:00 PM – 5:15 PM</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-secondary-100">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt quaerat
+      nesciunt molestias ullam exercitationem possimus perferendis quia nobis
+      dolorem nostrum, velit magnam alias odio quos architecto perspiciatis ab
+      quibusdam iusto unde quis quo quae! Omnis nam, quod accusamus molestias
+      quae suscipit in nostrum voluptas, ratione fuga delectus repudiandae ipsum
+      quidem beatae iusto mollitia enim recusandae! Pariatur fugiat dolorem
+      quia. Consectetur quod fugiat eligendi adipisci vel veritatis, dignissimos
+      sed, illum officiis, voluptatibus at? Perferendis necessitatibus
+      dignissimos deserunt cum velit, vero quam earum vitae at! Adipisci
+      temporibus, quos animi nemo expedita cupiditate pariatur ipsam similique
+      numquam, aperiam impedit perferendis eos doloremque iste dicta iusto
+      consequatur natus odit aspernatur nostrum porro praesentium possimus.
+      Quisquam accusamus facere ipsum quo ducimus placeat dolorum officia
+      doloribus est earum magnam rerum dolores, asperiores veniam nostrum
+      repudiandae explicabo voluptatum. Tempora ratione praesentium voluptatem
+      temporibus officia excepturi officiis, rerum quia maxime cum dolore ipsam
+      consectetur repellendus sint ea, nobis quidem quasi beatae vitae voluptas
+      id quaerat similique. Veritatis optio aut repellat voluptatum nostrum,
+      debitis laudantium error temporibus omnis quaerat ullam, unde culpa
+      perferendis sequi voluptate harum ea doloremque nihil illo magni. Illo
+      dicta, tempora odit nam, fuga tenetur veniam assumenda nobis aperiam earum
+      voluptatem. Provident ullam, commodi quo earum eos neque aut delectus
+      dolor beatae illum, ea maiores. Omnis, optio culpa voluptatibus pariatur
+      modi possimus? Natus, autem ducimus. Optio, sit eius at minima possimus
+      numquam! Dolores, dolorum tenetur quo repudiandae sunt mollitia laudantium
+      earum quam molestias enim maiores iste alias nesciunt. Minus, error
+      distinctio illum odio velit eveniet nihil ex iure similique eius
+      cupiditate dolores excepturi explicabo voluptatem. Autem dolorem illum in
+      facilis incidunt corrupti ea neque error culpa, reiciendis sapiente alias
+      vel deserunt nesciunt molestiae modi repellat maxime molestias dolor et
+      nulla. Autem porro odio consequatur labore distinctio mollitia, doloribus
+      deserunt laudantium eligendi reprehenderit rerum illum dignissimos aliquam
+      voluptates aperiam hic dolore, ad enim amet quidem tempora architecto!
+      Amet veniam obcaecati qui possimus minus voluptatum mollitia saepe,
+      eveniet deserunt assumenda a quae soluta sed magni quisquam explicabo,
+      dignissimos eos debitis! Nostrum sequi facere sint vel at similique dolore
+      nemo repudiandae fugiat ratione delectus officia aperiam sunt ipsum nihil,
+      culpa quae reiciendis deserunt doloremque incidunt officiis maxime?
+      Obcaecati deserunt, sed praesentium aut ipsam atque quasi beatae quis enim
+      illum soluta veniam numquam, neque libero provident, sapiente cumque
+      voluptates reprehenderit eveniet esse. Dolores, harum assumenda. Beatae
+      fugiat labore, mollitia iste cum, officia, fugit facilis dignissimos
+      dolores nesciunt sint autem dolorem tempore non voluptatem id consequuntur
+      earum eum fuga rem consectetur enim. Accusamus alias dignissimos officia
+      id voluptas hic, atque et inventore eius? Dicta, minima ut fugit sunt
+      doloremque voluptatibus enim! Eius officiis accusamus eaque minus alias,
+      suscipit vel mollitia nam? Molestias vitae officia aliquam nemo! Aperiam
+      at explicabo hic molestias nisi aspernatur exercitationem? Quo, asperiores
+      officia. Aut omnis dicta nulla architecto doloribus saepe, illo non, a
+      voluptate voluptates cumque quidem. Maxime saepe vel sed quas impedit
+      veritatis, minus asperiores pariatur eius, eum libero, rerum aspernatur
+      hic dolorum consequuntur laborum enim. Odio sequi blanditiis incidunt
+      laborum exercitationem, minus harum velit dicta atque labore, culpa quae
+      eos minima ut corporis repellat sapiente quod doloribus earum quidem
+      repellendus voluptates placeat. Esse perspiciatis unde consectetur
+      possimus ex explicabo aperiam maiores eos dolorem, accusamus, culpa,
+      consequatur quos amet? Repellat veniam incidunt labore explicabo ipsa
+      eligendi maiores voluptatem non suscipit. Maiores dignissimos, accusantium
+      laboriosam qui minima distinctio ipsa hic. Autem esse perferendis
+      distinctio voluptatibus in molestias assumenda! Corrupti quisquam
+      aspernatur voluptatibus possimus vitae dolorum alias iste, facere iusto
+      aliquid nulla eligendi neque ratione perferendis rem in ipsum veritatis,
+      error natus maxime dolorem! Amet, animi? Atque itaque officia sit
+      laboriosam totam eos et magni, voluptatem quisquam porro perferendis illo
+      facere recusandae nulla nisi impedit deserunt aspernatur ab corrupti odit
+      ex in! In nesciunt doloribus reprehenderit quidem non eius excepturi quae!
+      Cum odit reprehenderit enim harum aliquam aliquid commodi animi soluta
+      amet eos maxime, quos incidunt quae repellat ex impedit similique
+      aspernatur ad qui nostrum! Harum quidem magnam nisi obcaecati eaque quam
+      eum laudantium, aut tempore hic ex illum necessitatibus, tempora similique
+      iste rem quae voluptas. Alias mollitia temporibus, libero aliquid
+      praesentium ipsum iure non eos, cum ratione et, deserunt nisi id quae
+      delectus eligendi tempora tempore ab sapiente at ut minima itaque!
+      Provident, magnam enim? Sed quod hic esse voluptatem nobis eveniet nisi
+      aliquid voluptate accusamus, nam saepe, ut quidem adipisci eligendi,
+      corporis recusandae ad labore sit soluta? Voluptatibus obcaecati velit
+      voluptas aliquid amet dignissimos maiores suscipit beatae, fugiat facilis
+      odit sed, sunt iure atque culpa asperiores quos delectus repellat.
+      Laudantium praesentium obcaecati laborum suscipit culpa et provident omnis
+      quod tenetur non natus eius officia eligendi quibusdam perferendis facilis
+      corporis iure doloremque ullam consectetur, qui necessitatibus mollitia
+      debitis temporibus. Obcaecati, facilis fugit, nulla at quisquam illum
+      provident nam, ducimus rem nisi ipsam debitis facere quos voluptatem
+      nobis. Consequuntur, omnis animi inventore autem debitis at dolorum
+      accusamus expedita dolorem magni quia doloremque maiores, ipsum, cum
+      reprehenderit excepturi deleniti ut rerum sunt voluptatem minus laboriosam
+      quibusdam. Odit repudiandae odio cupiditate neque voluptate distinctio a
+      tempore quis asperiores sed voluptatibus, soluta unde exercitationem
+      maxime fuga omnis possimus magni nihil ducimus voluptatem, ad corporis
+      porro eveniet. Inventore velit cumque sequi nostrum commodi, sit explicabo
+      dicta! Minima consequuntur excepturi iure cumque deserunt reprehenderit
+      enim, quisquam, temporibus totam officiis perspiciatis rerum unde.
+      Consequuntur quam minima ipsum amet eaque repellat, error culpa, inventore
+      doloribus omnis eum ipsa vel quod a quos quas delectus magnam minus odit
+      consectetur! Aliquid, dolores quidem. Adipisci quo totam aliquam?
+    </section>
+
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="chart/performance-line-chart.js"></script>
+
+    <script src="./app.js"></script>
+    <script src="tab-function.js"></script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".button-next",
+          prevEl: ".button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.text-stroke {
+  -webkit-text-stroke: 1px #d8d5c7;
+  color: transparent;
+  font-size: 150px;
+  letter-spacing: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  white-space: nowrap;
+  text-align: center;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  z-index: -1;
+}
+
+.text-gradient-text {
+  background: -webkit-linear-gradient(#4f0000, #820000, #4f0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Animation styles */
+.tab-pane {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tab-pane.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sports-tab-pane {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sports-tab-pane.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ensure hidden tabs don't take up space */
+.tab-pane:not(.active) {
+  display: none;
+}
+
+.sports-tab-pane:not(.active) {
+  display: none;
+}
+
+/* Progress bar animation */
+.chart-bar {
+  transition: width 0.8s ease-out;
+}
