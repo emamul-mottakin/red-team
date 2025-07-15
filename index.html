@@ -19,7 +19,7 @@
       type="module"
     ></script>
   </head>
-  <body>
+  <body class="bg-secondary-100">
     <!-- navigation bar -->
     <nav
       class="fixed top-3 w-[90%] left-0 right-0 mx-auto bg-linear-to-r from-[#4E0000] to-[#7D0000] text-white rounded md:rounded-full backdrop-blur-sm shadow-lg z-50"
@@ -32,12 +32,13 @@
           </div>
           <div class="hidden md:flex space-x-8">
             <a href="#home" class="nav-link transition-colors">Home</a>
-            <a href="#team" class="nav-link transition-colors">Team</a>
+
             <a
               href="#activity"
               class="nav-link transition-all duration-200 active:ring-2 active:ring-offset-2 ring-primary active:scale-90 active:shadow-custom"
               >Activity</a
             >
+            <a href="#team" class="nav-link transition-colors">Team</a>
             <a href="#gallery" class="nav-link transition-colors">Gallery</a>
           </div>
           <button
@@ -72,7 +73,10 @@
     </nav>
 
     <!-- hero section -->
-    <header class="bg-secondary-100 h-screen overflow-hidden relative z-2">
+    <header
+      id="home"
+      class="bg-secondary-100 h-screen overflow-hidden relative z-2"
+    >
       <!-- background floating text -->
       <div>
         <p class="text-stroke font-sakana top-16">From passion</p>
@@ -109,11 +113,13 @@
           </p>
           <!-- btn -->
           <div class="w-fit m-auto sm:m-0">
-            <button
-              class="bg-[#3E0505] skew-x-[-30deg] text-white font-sakana py-2 px-3 lg:py-3 lg:px6 ml-4 cursor-pointer hover:scale-95 active:scale-90 duration-100 tracking-[3px] text-xs"
-            >
-              DISCOVER MORE
-            </button>
+            <a href="#live-score">
+              <button
+                class="bg-[#3E0505] skew-x-[-30deg] text-white font-sakana py-2 px-8 lg:py-3 lg:px6 ml-4 cursor-pointer hover:scale-95 active:scale-90 duration-100 tracking-[3px] text-xs"
+              >
+                Live Score
+              </button>
+            </a>
           </div>
         </div>
       </div>
@@ -126,7 +132,7 @@
     </header>
 
     <!-- live score section -->
-    <section class="bg-secondary-100">
+    <section id="live-score" class="bg-secondary-100">
       <div class="container mx-auto px-4 pb-20">
         <!-- score board cricket-->
         <div
@@ -603,17 +609,18 @@
           >
             <i class="fas fa-utensils mr-2"></i>Food
           </button>
+
           <button
             class="tab-btn bg-white text-gray-700 px-6 py-3 font-semibold cursor-pointer"
-            data-tab="creativity"
-          >
-            <i class="fas fa-palette mr-2"></i>Creativity
-          </button>
-          <button
-            class="tab-btn bg-white text-gray-700 px-6 py-3 rounded-r-lg font-semibold cursor-pointer"
             data-tab="organizing"
           >
             <i class="fa-solid fa-clock mr-2"></i>Itinerary
+          </button>
+          <button
+            class="tab-btn bg-white text-gray-700 px-6 py-3 font-semibold cursor-pointer rounded-r-lg"
+            data-tab="creativity"
+          >
+            <i class="fas fa-palette mr-2"></i>Disclaimer
           </button>
         </div>
 
@@ -1824,110 +1831,65 @@
             </div>
           </div>
 
-          <!-- Creativity Tab -->
+          <!-- Disclaimer Tab -->
           <div id="creativity" class="tab-pane hidden">
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-5 mt-5">
               <div
-                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                class="flex-1 bg-secondary-50 border-2 border-secondary-200 text-primary rounded-xl shadow-card p-10"
               >
-                <img
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="Design work"
-                  class="w-full h-48 object-cover"
-                />
-                <div class="p-4">
-                  <h4 class="font-semibold text-gray-800">Team Logo Design</h4>
-                  <p class="text-sm text-gray-600 mt-1">By Emma Wilson</p>
-                  <span
-                    class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mt-2"
-                    >Graphic Design</span
-                  >
-                </div>
+                <span
+                  class="font-sakana font-bold text-3xl text-center block mb-5"
+                  >Disclaimer</span
+                >
+                <ul class="list-disc pl-5 mt-5 text-primary space-y-2.5">
+                  <li>
+                    All the General rules will be followed as per the OUTING SOP
+                    Version 1.1. There is no restriction on maximum number of
+                    games the players can participate in. The addition would be:
+                    Each girl from each team must participate in at least one
+                    main game, for a minimum of 5 minutes.
+                  </li>
+                  <li>
+                    As per the Games SOP rule 5.06 - The football match will
+                    consist of two halves- each lasting 10 minutes
+                  </li>
+                  <li>
+                    Time Limit for Bowling: Each team has a maximum of 25
+                    minutes to complete their 6 overs. If the bowling team
+                    exceeds the time limit, one boundary (4 runs) will be
+                    awarded to the batting team for every minute of delay.
+                  </li>
+                  <li>
+                    As per the Games SOP rule 6.03 – Any Member of the team can
+                    participate in any of the short games.
+                  </li>
+                  <li>
+                    In case of short games , whichever team will get the highest
+                    accumulated total points from the games will be declared as
+                    winner, earning 20 points.
+                  </li>
+                  <li>
+                    Lunch Timing: Lunch must be taken within the designated
+                    time. If any player is late for lunch and if anyone loses
+                    their token then the team will lose 1 point for each late
+                    player.
+                  </li>
+                  <li>
+                    The referee panel will consist of representatives from all
+                    participating teams. For each match, referees will be
+                    appointed from teams not involved in the game to ensure
+                    impartiality. Lulual Marjan Mostafiz Sneha will be solely
+                    responsible for maintaining the scores and may seek
+                    assistance from any of the referees as needed.
+                  </li>
+                  <li>
+                    The warm-up session will be conducted by designated members
+                    of the organizing team.
+                  </li>
+                </ul>
               </div>
-              <div
-                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <img
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="Writing work"
-                  class="w-full h-48 object-cover"
-                />
-                <div class="p-4">
-                  <h4 class="font-semibold text-gray-800">Team Anthem</h4>
-                  <p class="text-sm text-gray-600 mt-1">By Mike Rodriguez</p>
-                  <span
-                    class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mt-2"
-                    >Writing</span
-                  >
-                </div>
-              </div>
-              <div
-                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <img
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="Video work"
-                  class="w-full h-48 object-cover"
-                />
-                <div class="p-4">
-                  <h4 class="font-semibold text-gray-800">Victory Montage</h4>
-                  <p class="text-sm text-gray-600 mt-1">By David Kim</p>
-                  <span
-                    class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full mt-2"
-                    >Video</span
-                  >
-                </div>
-              </div>
-              <div
-                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <img
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="DIY work"
-                  class="w-full h-48 object-cover"
-                />
-                <div class="p-4">
-                  <h4 class="font-semibold text-gray-800">Custom Jerseys</h4>
-                  <p class="text-sm text-gray-600 mt-1">By Lisa Park</p>
-                  <span
-                    class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full mt-2"
-                    >DIY</span
-                  >
-                </div>
-              </div>
-              <div
-                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <img
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="Design work"
-                  class="w-full h-48 object-cover"
-                />
-                <div class="p-4">
-                  <h4 class="font-semibold text-gray-800">Event Posters</h4>
-                  <p class="text-sm text-gray-600 mt-1">By Emma Wilson</p>
-                  <span
-                    class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full mt-2"
-                    >Graphic Design</span
-                  >
-                </div>
-              </div>
-              <div
-                class="creative-item bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-              >
-                <img
-                  src="/placeholder.svg?height=200&width=300"
-                  alt="Writing work"
-                  class="w-full h-48 object-cover"
-                />
-                <div class="p-4">
-                  <h4 class="font-semibold text-gray-800">Match Reports</h4>
-                  <p class="text-sm text-gray-600 mt-1">By Tom Anderson</p>
-                  <span
-                    class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mt-2"
-                    >Writing</span
-                  >
-                </div>
+              <div class="flex-1">
+                <img src="asset/shoes.png" class="w-full" />
               </div>
             </div>
           </div>
@@ -3265,6 +3227,66 @@
         </div>
       </div>
     </section>
+
+    <!-- Enhanced Footer Section -->
+    <footer
+      class="bg-gradient-to-b from-[#7D0000] to-[#4E0000] rounded-tl-4xl rounded-tr-4xl text-white py-20"
+    >
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col items-center">
+          <!-- Logo/Brand with decorative element -->
+          <div class="mb-6 text-center">
+            <div class="inline-block border-b-2 border-secondary-200 pb-2 mb-3">
+              <h2 class="text-3xl font-sakana text-white">RED WARRIORS</h2>
+            </div>
+            <p class="text-secondary-200 text-sm">
+              Unleash the spirit of competition
+            </p>
+          </div>
+
+          <!-- Navigation Links with subtle hover effect -->
+          <nav class="mb-8">
+            <ul class="flex flex-wrap justify-center gap-6">
+              <li>
+                <a
+                  href="#home"
+                  class="text-white hover:text-secondary-200 transition-colors font-medium"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#activity"
+                  class="text-white hover:text-secondary-200 transition-colors font-medium"
+                  >Activity</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#team"
+                  class="text-white hover:text-secondary-200 transition-colors font-medium"
+                  >Team</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-white hover:text-secondary-200 transition-colors font-medium"
+                  >Gallery</a
+                >
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Copyright with top border -->
+          <div class="w-full pt-6 border-t border-white/20 text-center">
+            <p class="text-sm text-white/70">
+              &copy; 2025 Red Warriors. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
