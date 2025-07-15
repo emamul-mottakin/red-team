@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="./style.css " rel="stylesheet" />
+    <link rel="stylesheet" href="custom.css" />
+    <script
+      src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+      type="module"
+    ></script>
+  </head>
+  <body>
+    <!-- Team Section -->
+    <section id="team" class="py-20 bg-secondary-100">
+      <div class="container mx-auto px-4">
+        <!-- section title and description -->
+        <div class="text-center mb-10 fade-in">
+          <h2 class="text-4xl font-sakana text-primary mb-4">Our Team</h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Meet the people who make Red Warrior great
+          </p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="flex flex-wrap justify-center mb-8">
+          <button
+            class="team-tab-btn active bg-primary text-white px-6 py-3 rounded-l-lg font-semibold cursor-pointer"
+            data-team-tab="red-team"
+          >
+            <i class="fas fa-users mr-2"></i>Red Team
+          </button>
+          <button
+            class="team-tab-btn bg-white text-gray-700 px-6 py-3 font-semibold cursor-pointer"
+            data-team-tab="referee-team"
+          >
+            <i class="fas fa-whistle mr-2"></i>Referee Team
+          </button>
+          <button
+            class="team-tab-btn bg-white text-gray-700 px-6 py-3 rounded-r-lg font-semibold cursor-pointer"
+            data-team-tab="birthday"
+          >
+            <i class="fas fa-birthday-cake mr-2"></i>Birthday
+          </button>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="team-tab-content">
+          <!-- Red Team Tab -->
+          <div id="red-team" class="team-tab-pane active">
+            <!-- Owner and Manager (2 columns - first row) -->
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <!-- Owner -->
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/owner.jpg"
+                    alt="Team Owner"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-xl font-sakana text-primary text-center">
+                  John Smith
+                </h3>
+                <p class="text-primary font-bold">Team Owner</p>
+                <p class="text-primary text-sm text-center">
+                  Visionary leader and founder of Red Warriors
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <a href="#" class="text-primary hover:text-red-700"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="text-primary hover:text-blue-500"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="#" class="text-primary hover:text-purple-600"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+
+              <!-- Manager -->
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-32 h-32 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/manager.jpg"
+                    alt="Team Manager"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-xl font-sakana text-primary text-center">
+                  Sarah Johnson
+                </h3>
+                <p class="text-primary font-bold">Team Manager</p>
+                <p class="text-primary text-sm text-center">
+                  Strategist and organizer behind our success
+                </p>
+                <div class="flex gap-3 mt-2">
+                  <a href="#" class="text-primary hover:text-red-700"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="text-primary hover:text-blue-500"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a href="#" class="text-primary hover:text-purple-600"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Members (4 columns - rows 2-4) -->
+            <div class="grid md:grid-cols-3 gap-6" id="team-members-container">
+              <!-- First 12 team members (3 rows of 4) -->
+              <!-- Row 2 -->
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member1.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Alex Turner
+                </h3>
+                <p class="text-primary text-sm font-medium">Captain</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="text-primary hover:text-blue-500 text-sm"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member2.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Michael Brown
+                </h3>
+                <p class="text-primary text-sm font-medium">Vice Captain</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a href="#" class="text-primary hover:text-blue-500 text-sm"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member3.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  David Wilson
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member4.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  James Rodriguez
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <!-- Row 3 -->
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member5.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Thomas Muller
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member6.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Robert Lewandowski
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member7.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Kevin De Bruyne
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member8.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Lionel Messi
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <!-- Row 4 -->
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member9.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Cristiano Ronaldo
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member10.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Neymar Jr
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member11.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Kylian Mbappé
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member12.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Erling Haaland
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <!-- Hidden members (13-32) -->
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4 hidden-member"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member13.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Player 13
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4 hidden-member"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member13.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Player 13
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4 hidden-member"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member13.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Player 13
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <div
+                class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4 hidden-member"
+              >
+                <div
+                  class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                >
+                  <img
+                    src="asset/team/member13.jpg"
+                    alt="Team Member"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 class="text-lg font-sakana text-primary text-center">
+                  Player 13
+                </h3>
+                <p class="text-primary text-sm font-medium">Player</p>
+                <div class="flex gap-3 mt-1">
+                  <a href="#" class="text-primary hover:text-red-700 text-sm"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                </div>
+              </div>
+
+              <!-- More hidden members would go here (up to 32) -->
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-8">
+              <button
+                id="load-more-btn"
+                class="bg-primary text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors"
+              >
+                Load More
+              </button>
+            </div>
+          </div>
+
+          <!-- Referee Team Tab -->
+          <div id="referee-team" class="team-tab-pane hidden">
+            <!-- Referee Sub-tabs btns-->
+            <div class="flex flex-wrap justify-center mb-8 gap-2">
+              <button
+                class="referee-tab-btn active bg-primary text-white px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-referee-tab="cricket-referee"
+              >
+                Cricket Referees
+              </button>
+              <button
+                class="referee-tab-btn bg-white text-gray-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-referee-tab="football-referee"
+              >
+                Football Referees
+              </button>
+              <button
+                class="referee-tab-btn bg-white text-gray-700 px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm font-medium rounded-4xl cursor-pointer"
+                data-referee-tab="volleyball-referee"
+              >
+                Volleyball Referees
+              </button>
+            </div>
+
+            <!-- Referee Sub-tab Contents -->
+            <div class="referee-tab-content">
+              <!-- Cricket Referees -->
+              <div id="cricket-referee" class="referee-tab-pane active">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <!-- Cricket Referee 1 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+                  >
+                    <div
+                      class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                    >
+                      <img
+                        src="asset/referees/cricket1.jpg"
+                        alt="Cricket Referee"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-lg font-sakana text-primary text-center">
+                      Robert Umpire
+                    </h3>
+                    <p class="text-primary text-sm font-medium">
+                      Head Cricket Referee
+                    </p>
+                    <p class="text-primary text-xs text-center">
+                      10 years experience
+                    </p>
+                  </div>
+
+                  <!-- Cricket Referee 2 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+                  >
+                    <div
+                      class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                    >
+                      <img
+                        src="asset/referees/cricket2.jpg"
+                        alt="Cricket Referee"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-lg font-sakana text-primary text-center">
+                      James Official
+                    </h3>
+                    <p class="text-primary text-sm font-medium">
+                      Cricket Referee
+                    </p>
+                    <p class="text-primary text-xs text-center">
+                      7 years experience
+                    </p>
+                  </div>
+
+                  <!-- More cricket referees... -->
+                </div>
+              </div>
+
+              <!-- Football Referees -->
+              <div id="football-referee" class="referee-tab-pane hidden">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <!-- Football Referee 1 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+                  >
+                    <div
+                      class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                    >
+                      <img
+                        src="asset/referees/football1.jpg"
+                        alt="Football Referee"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-lg font-sakana text-primary text-center">
+                      Mark Whistle
+                    </h3>
+                    <p class="text-primary text-sm font-medium">
+                      Head Football Referee
+                    </p>
+                    <p class="text-primary text-xs text-center">
+                      12 years experience
+                    </p>
+                  </div>
+
+                  <!-- Football Referee 2 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+                  >
+                    <div
+                      class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                    >
+                      <img
+                        src="asset/referees/football2.jpg"
+                        alt="Football Referee"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-lg font-sakana text-primary text-center">
+                      Paul Linesman
+                    </h3>
+                    <p class="text-primary text-sm font-medium">
+                      Football Referee
+                    </p>
+                    <p class="text-primary text-xs text-center">
+                      5 years experience
+                    </p>
+                  </div>
+
+                  <!-- More football referees... -->
+                </div>
+              </div>
+
+              <!-- Volleyball Referees -->
+              <div id="volleyball-referee" class="referee-tab-pane hidden">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <!-- Volleyball Referee 1 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+                  >
+                    <div
+                      class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                    >
+                      <img
+                        src="asset/referees/volleyball1.jpg"
+                        alt="Volleyball Referee"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-lg font-sakana text-primary text-center">
+                      Steve Net
+                    </h3>
+                    <p class="text-primary text-sm font-medium">
+                      Head Volleyball Referee
+                    </p>
+                    <p class="text-primary text-xs text-center">
+                      8 years experience
+                    </p>
+                  </div>
+
+                  <!-- Volleyball Referee 2 -->
+                  <div
+                    class="bg-secondary-50 border-2 border-secondary-200 rounded-xl shadow-card p-6 flex flex-col items-center gap-4"
+                  >
+                    <div
+                      class="w-24 h-24 rounded-full overflow-hidden border-4 border-primary"
+                    >
+                      <img
+                        src="asset/referees/volleyball2.jpg"
+                        alt="Volleyball Referee"
+                        class="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h3 class="text-lg font-sakana text-primary text-center">
+                      Gary Spike
+                    </h3>
+                    <p class="text-primary text-sm font-medium">
+                      Volleyball Referee
+                    </p>
+                    <p class="text-primary text-xs text-center">
+                      6 years experience
+                    </p>
+                  </div>
+
+                  <!-- More volleyball referees... -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Birthday Tab -->
+          <div id="birthday" class="team-tab-pane hidden">
+            <div
+              class="bg-linear-to-t from-[#4E0000] via-[#7D0000] to-[#4E0000] text-white px-8 py-8 rounded-4xl"
+            >
+              <h3 class="text-3xl font-sakana text-center mb-6">
+                Birthday Celebrations
+              </h3>
+              <p class="text-center mb-8">
+                This month we celebrate the birthdays of our team members!
+              </p>
+
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Birthday Person 1 -->
+                <div
+                  class="bg-white/20 rounded-xl p-6 flex flex-col items-center gap-4 border border-white/30"
+                >
+                  <div
+                    class="w-20 h-20 rounded-full overflow-hidden border-4 border-[#FFBF00]"
+                  >
+                    <img
+                      src="asset/team/birthday1.jpg"
+                      alt="Birthday Person"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 class="text-xl font-sakana text-center">Emma Johnson</h4>
+                  <div class="text-center">
+                    <p class="text-[#FFBF00] font-bold">July 15</p>
+                    <p class="text-sm">Turning 28</p>
+                  </div>
+                  <button
+                    class="mt-2 bg-[#FFBF00] text-[#7D0000] px-4 py-1 rounded-full text-sm font-medium hover:bg-amber-300 transition-colors"
+                  >
+                    Send Wishes
+                  </button>
+                </div>
+
+                <!-- Birthday Person 2 -->
+                <div
+                  class="bg-white/20 rounded-xl p-6 flex flex-col items-center gap-4 border border-white/30"
+                >
+                  <div
+                    class="w-20 h-20 rounded-full overflow-hidden border-4 border-[#FFBF00]"
+                  >
+                    <img
+                      src="asset/team/birthday2.jpg"
+                      alt="Birthday Person"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 class="text-xl font-sakana text-center">Daniel Smith</h4>
+                  <div class="text-center">
+                    <p class="text-[#FFBF00] font-bold">July 22</p>
+                    <p class="text-sm">Turning 32</p>
+                  </div>
+                  <button
+                    class="mt-2 bg-[#FFBF00] text-[#7D0000] px-4 py-1 rounded-full text-sm font-medium hover:bg-amber-300 transition-colors"
+                  >
+                    Send Wishes
+                  </button>
+                </div>
+
+                <!-- Birthday Person 3 -->
+                <div
+                  class="bg-white/20 rounded-xl p-6 flex flex-col items-center gap-4 border border-white/30"
+                >
+                  <div
+                    class="w-20 h-20 rounded-full overflow-hidden border-4 border-[#FFBF00]"
+                  >
+                    <img
+                      src="asset/team/birthday3.jpg"
+                      alt="Birthday Person"
+                      class="w-full h-full object-cover"
+                    />
+                  </div>
+                  <h4 class="text-xl font-sakana text-center">Lisa Wong</h4>
+                  <div class="text-center">
+                    <p class="text-[#FFBF00] font-bold">July 30</p>
+                    <p class="text-sm">Turning 25</p>
+                  </div>
+                  <button
+                    class="mt-2 bg-[#FFBF00] text-[#7D0000] px-4 py-1 rounded-full text-sm font-medium hover:bg-amber-300 transition-colors"
+                  >
+                    Send Wishes
+                  </button>
+                </div>
+              </div>
+
+              <div class="mt-8 text-center">
+                <p class="text-white/80">
+                  We'll have a special celebration during our next outing!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Team tab functionality
+        const teamTabBtns = document.querySelectorAll(".team-tab-btn");
+        const teamTabPanes = document.querySelectorAll(".team-tab-pane");
+
+        // Referee sub-tab functionality
+        const refereeTabBtns = document.querySelectorAll(".referee-tab-btn");
+        const refereeTabPanes = document.querySelectorAll(".referee-tab-pane");
+
+        // Initialize first tab and referee sub-tab
+        showTeamTab("red-team");
+        showRefereeTab("cricket-referee");
+
+        // Add event listeners for team tabs
+        teamTabBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const tabId = this.getAttribute("data-team-tab");
+            showTeamTab(tabId);
+          });
+        });
+
+        // Add event listeners for referee sub-tabs
+        refereeTabBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const refereeTabId = this.getAttribute("data-referee-tab");
+            showRefereeTab(refereeTabId);
+          });
+        });
+
+        // Show More functionality for team members
+        const showMoreBtn = document.getElementById("show-more-btn");
+        const teamMembersContainer = document.getElementById(
+          "team-members-container"
+        );
+
+        // Initially hide members beyond the first 14
+        const allMembers =
+          teamMembersContainer.querySelectorAll(".bg-secondary-50");
+        if (allMembers.length > 14) {
+          for (let i = 14; i < allMembers.length; i++) {
+            allMembers[i].style.display = "none";
+          }
+        } else {
+          showMoreBtn.style.display = "none";
+        }
+
+        let showingAll = false;
+        showMoreBtn.addEventListener("click", function () {
+          if (showingAll) {
+            // Show only first 14
+            for (let i = 14; i < allMembers.length; i++) {
+              allMembers[i].style.display = "none";
+            }
+            showMoreBtn.textContent = "Show All Team Members";
+            showingAll = false;
+
+            // Scroll to top of team section
+            document
+              .getElementById("team")
+              .scrollIntoView({ behavior: "smooth" });
+          } else {
+            // Show all
+            for (let i = 14; i < allMembers.length; i++) {
+              allMembers[i].style.display = "flex";
+            }
+            showMoreBtn.textContent = "Show Less";
+            showingAll = true;
+          }
+        });
+
+        // Function to show team tab content
+        function showTeamTab(tabId) {
+          // Update active state of tab buttons
+          teamTabBtns.forEach((btn) => {
+            if (btn.getAttribute("data-team-tab") === tabId) {
+              btn.classList.add("active", "bg-primary", "text-white");
+              btn.classList.remove("bg-white", "text-gray-700");
+            } else {
+              btn.classList.remove("active", "bg-primary", "text-white");
+              btn.classList.add("bg-white", "text-gray-700");
+            }
+          });
+
+          // Update active state of tab panes
+          teamTabPanes.forEach((pane) => {
+            if (pane.id === tabId) {
+              pane.classList.add("active");
+              pane.style.display = "block";
+
+              setTimeout(() => {
+                pane.style.opacity = "1";
+                pane.style.transform = "translateY(0)";
+              }, 10);
+            } else {
+              pane.style.opacity = "0";
+              pane.style.transform = "translateY(10px)";
+
+              setTimeout(() => {
+                pane.classList.remove("active");
+                pane.style.display = "none";
+              }, 300);
+            }
+          });
+        }
+
+        // Function to show referee sub-tab content
+        function showRefereeTab(refereeTabId) {
+          // Update active state of referee tab buttons
+          refereeTabBtns.forEach((btn) => {
+            if (btn.getAttribute("data-referee-tab") === refereeTabId) {
+              btn.classList.add("active", "bg-primary", "text-white");
+              btn.classList.remove("bg-white", "text-gray-700");
+            } else {
+              btn.classList.remove("active", "bg-primary", "text-white");
+              btn.classList.add("bg-white", "text-gray-700");
+            }
+          });
+
+          // Update active state of referee tab panes
+          refereeTabPanes.forEach((pane) => {
+            if (pane.id === refereeTabId) {
+              pane.classList.add("active");
+              pane.style.display = "block";
+
+              setTimeout(() => {
+                pane.style.opacity = "1";
+                pane.style.transform = "translateX(0)";
+              }, 10);
+            } else {
+              pane.style.opacity = "0";
+              pane.style.transform = "translateX(20px)";
+
+              setTimeout(() => {
+                pane.classList.remove("active");
+                pane.style.display = "none";
+              }, 300);
+            }
+          });
+        }
+      });
+
+      // Load More functionality for team members
+      const loadMoreBtn = document.getElementById("load-more-btn");
+      const teamMembersContainer = document.getElementById(
+        "team-members-container"
+      );
+      const hiddenMembers =
+        teamMembersContainer.querySelectorAll(".hidden-member");
+
+      // Initially hide members beyond the first 12 (plus owner/manager)
+      if (hiddenMembers.length > 0) {
+        hiddenMembers.forEach((member) => {
+          member.style.display = "none";
+        });
+      } else {
+        loadMoreBtn.style.display = "none";
+      }
+
+      let showingAll = false;
+      loadMoreBtn.addEventListener("click", function () {
+        if (showingAll) {
+          // Hide the additional members
+          hiddenMembers.forEach((member) => {
+            member.style.display = "none";
+          });
+          loadMoreBtn.textContent = "Load More";
+          showingAll = false;
+
+          // Scroll to top of team section
+          document
+            .getElementById("team")
+            .scrollIntoView({ behavior: "smooth" });
+        } else {
+          // Show all members
+          hiddenMembers.forEach((member) => {
+            member.style.display = "flex";
+          });
+          loadMoreBtn.textContent = "Show Less";
+          showingAll = true;
+        }
+      });
+    </script>
+  </body>
+</html>
